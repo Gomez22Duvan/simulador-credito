@@ -1,16 +1,37 @@
-# React + Vite
+## Simulador de crédito
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación hecha con React y Vite (JavaScript) que simula un crédito de consumo. El usuario ingresa monto, plazo e ingresos mensuales y ve la cuota mensual y el total a pagar.
 
-Currently, two official plugins are available:
+## Cómo instalar y ejecutar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Instalar las dependencias:
 
-## React Compiler
+```bash
+npm install
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. Iniciar la aplicación:
 
-## Expanding the ESLint configuration
+```bash
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. Abrir en el navegador la dirección que muestra la terminal (normalmente http://localhost:5173).
+
+## Estructura del proyecto
+
+- `src/utils/simulador.js`: función que calcula la cuota y función que da formato de pesos colombianos.
+- `src/components/FormularioSimulacion.jsx`: formulario con las validaciones.
+- `src/components/Resultado.jsx`: muestra la cuota, el total y el aviso rojo o verde.
+- `src/components/Historial.jsx`: lista de simulaciones con botón para eliminar.
+- `src/App.jsx`: guarda el resultado y el historial y conecta los componentes.
+- `src/index.css`: estilos propios.
+
+## Decisiones que tomé
+
+- Tasa fija de 1,8 % mensual, como indica el enunciado.
+- Los errores se muestran debajo de cada campo y el botón Simular se deshabilita mientras haya errores.
+- El historial se guarda solo en el estado de React, por eso se pierde al recargar la página.
+- Se usó CSS propio, sin librerías de componentes ni de formularios.
+- La pantalla se adapta a celular y a escritorio con un ancho máximo y campos al 100 % del ancho.
+- Si el monto o los ingresos se dejan vacíos, se muestra el error y no se puede simular.
