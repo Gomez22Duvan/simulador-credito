@@ -29,7 +29,7 @@ function FormularioSimulacion({ onSimular }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="tarjeta" onSubmit={handleSubmit}>
       <h2>Simula tu crédito</h2>
 
       <label>Monto</label>

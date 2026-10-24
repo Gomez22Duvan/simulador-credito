@@ -23,6 +23,7 @@ function App() {
   return (
     <div className="contenedor">
       <h1>Simulador de crédito</h1>
+<p className="subtitulo">Calcula tu cuota mensual al instante</p>
       <FormularioSimulacion onSimular={simular} />
       <Resultado resultado={resultado} />
       <Historial historial={historial} onEliminar={eliminar} />

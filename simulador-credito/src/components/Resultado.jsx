@@ -8,15 +8,19 @@ function Resultado({ resultado }) {
   const superaCapacidad = resultado.cuota > resultado.ingresos * 0.4;
 
   return (
-    <div>
+    <div className="tarjeta">
       <h2>Resultado</h2>
-      <p>Cuota mensual: {formatearPesos(resultado.cuota)}</p>
-      <p>Total a pagar: {formatearPesos(resultado.cuota * resultado.plazo)}</p>
+      <p className="dato">
+        Cuota mensual <strong>{formatearPesos(resultado.cuota)}</strong>
+      </p>
+      <p className="dato">
+        Total a pagar <strong>{formatearPesos(resultado.cuota * resultado.plazo)}</strong>
+      </p>
 
       {superaCapacidad ? (
-        <p className="rojo">La cuota supera tu capacidad de pago</p>
+        <p className="aviso rojo">La cuota supera tu capacidad de pago</p>
       ) : (
-        <p className="verde">Puedes solicitar este crédito</p>
+        <p className="aviso verde">Puedes solicitar este crédito</p>
       )}
     </div>
   );
