@@ -11,9 +11,9 @@ body {
   padding: 24px 16px;
 }
 
-h1 { color: #0b2f5b; font-size: 1.6rem; margin-bottom: 4px; }
+h1 { color: #0b2f5b; font-size: 1.6rem; margin-bottom: 4px; text-align: center; }
 h2 { color: #0b2f5b; font-size: 1.15rem; margin-top: 0; }
-.subtitulo { color: #6b7280; margin: 0 0 24px; }
+.subtitulo { color: #6b7280; margin: 0 0 24px; text-align: center; }
 
 /* Cada sección es una tarjeta blanca */
 .tarjeta {
